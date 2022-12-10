@@ -1,0 +1,100 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background:linear-gradient(to right,rgb(136, 162, 239),rgb(69, 209, 247));
+    
+}
+.clock{
+    width:300px;
+    height:300px;
+    background-color: rgb(255,255,255,.8);
+    border-radius: 50%;
+    border: 2px solid green;
+    position: absolute;
+
+}
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: blue;
+    z-index: 11;
+    width: 15px;height: 15px;
+    top: 50%;left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.clock .number{
+    --rotation:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--ratation));
+    font-size: 1.5rem;
+}
+.clock .number1{--ratation:30deg;}
+.clock .number2{--ratation:60deg;}
+.clock .number3{--ratation:90deg;}
+.clock .number4{--ratation:120deg;}
+.clock .number5{--ratation:150deg;}
+.clock .number6{--ratation:180deg;}
+.clock .number7{--ratation:210deg;}
+.clock .number8{--ratation:240deg;}
+.clock .number9{--ratation:270deg;}
+.clock .number10{--ratation:300deg;}
+.clock .number11{--ratation:330deg;}
+.clock .hand{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: black;
+    border: 1px solid yellow;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    transform:translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    z-index: 10;
+
+
+
+}
+.clock .hand.second{
+    width: 5px;
+    height: 45%;
+    color: red;
+    background-color: green;
+}
+.clock .hand.minutes{
+    width: 7px;
+    height: 40%;
+    color:blue;
+    background-color:orange;
+}
+.clock .hand.hour{
+    width: 9px;
+    height: 35%;
+    color: black;
+    background-color: red;
+}
+p{
+    font-family: 'Times New Roman';
+    font-size: 8vh;
+    text-shadow: 8px magenta;
+    margin-bottom: auto;
+    margin-right: 20px;
+    text-align: left;
+    position: relative;
+    
+}
+#digital-clock{
+    font-size: 8vh;
+    text-align: right;
+    background-color: maroon;
+    margin-bottom: -400px;
+    position: absolute;
+    
+
+}
